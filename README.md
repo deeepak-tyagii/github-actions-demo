@@ -69,26 +69,6 @@ The entire CI/CD process is defined in the `.github/workflows/main.yml` file a
         - Install any new dependencies.
             
         - Restart the application using PM2 to apply the changes with zero downtime.
-            
-
-## Setup and Deployment
-
-To replicate this project, you will need:
-
-- An AWS account.
-    
-- A GitHub account.
-    
-- Node.js and npm installed locally.
-    
-
-Follow the detailed steps in the **Phase 1: Preparation** section of the guide to:
-
-1. Launch and configure your EC2 instance.
-    
-2. Create the project files and push them to your GitHub repository.
-    
-3. Configure the necessary GitHub Secrets (`EC2_HOST`, `EC2_USER`, `SSH_PRIVATE_KEY`).
     
 
 ## Viewing the Deployment
