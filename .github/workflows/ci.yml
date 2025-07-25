@@ -42,4 +42,20 @@ jobs:
               with:
                 name: test-report
                 path: reports/*
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Deploy to Ec2 instance
+              uses: appleboy/ssh-action@v1
+              with:
+                host: ${{ secrets.EC2_HOST }}
+                username: ${{ secrets.EC2_USER }}
+                key: ${{ secrets.SSH_PRIVATE_KEY }}
+                port: 22
+                script:
+                    cd ~/github-actions-demo
+                    git pull origin main
+                    npm install
+                    pm2 restart app.js
+
 
